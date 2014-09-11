@@ -28,9 +28,9 @@ import android.os.Message;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemProperties;
+import android.telephony.Rlog;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
-import android.telephony.Rlog;
 import android.util.Log;
 
 import com.android.internal.telephony.IPhoneSubInfo;
@@ -503,16 +503,6 @@ public class TelephonyManager {
         default:
             return PhoneConstants.PHONE_TYPE_GSM;
         }
-    }
-
-    /**
-     * {@hide}
-     */
-
-    public void toggleMobileNetwork(int networkState) {
-        try {
-            getITelephony().toggleMobileNetwork(networkState);
-        } catch (RemoteException e) { }
     }
 
     /**
